@@ -29,7 +29,7 @@ st.title("Token Visualizer ")
 text = st.text_area("", placeholder="Type your text here...")
 st.header("Choose a model from the dropdown")
 
-options = ["BERT","GPT-2","GPT-4","Flan-T5-small","StarCoder2-15B","Phi-3","Qwen2 - Vision-Language Model","DeepSeek-R1-0528","Llama-3.1-8B-Instruct","Llama-4-Scout-17B-16E-Instruct"]
+options = ["BERT","GPT-2","GPT-4","Flan-T5-small","StarCoder2-15B","Phi-3","Qwen2 - Vision-Language Model","DeepSeek-R1-0528"]
 selected_option = st.selectbox("Select a Model:", options)
 
 if st.button("Process Data"):
