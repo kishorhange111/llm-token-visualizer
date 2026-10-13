@@ -62,7 +62,7 @@ if st.button("Process Data"):
         st.write(f"**{selected_option}**")
         try:
             html, count = show_tokens(text, MODELS[selected_option])
-            # unsafe_allow_html is needed for the coloured spans.
+            # unsafe_allow_html is needed for the coloured spans; the token text inside is escaped.
             st.markdown(f"<p>{html}</p>", unsafe_allow_html=True)
             st.caption(f"Token count: {count}")
         except Exception as e:

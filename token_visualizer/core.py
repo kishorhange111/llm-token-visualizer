@@ -14,6 +14,8 @@ The pipeline used by the app:
          --tokenizer.decode(id) each--> ["piece", "piece", ...]
          --render_tokens_html-->        <span style="color: ...">piece</span> ...
 """
+import html
+
 # Display name -> Hugging Face Hub id. Only the tokenizer files are downloaded
 # (a few MB each); AutoTokenizer never fetches the model weights.
 MODELS = {
@@ -57,7 +59,8 @@ def render_tokens_html(pieces, colors=COLORS):
         colors: CSS colours to cycle through, one per token.
 
     Returns:
-        An HTML string.
+        An HTML string. Pieces are HTML-escaped, so text such as "<b>" or
+        "&amp;" is shown literally instead of being interpreted by the browser.
     """
     spans = []
     for idx, piece in enumerate(pieces):
@@ -65,6 +68,6 @@ def render_tokens_html(pieces, colors=COLORS):
             piece = piece[1]
         spans.append(
             f'<span style="color: {colors[idx % len(colors)]}; font-weight: bold;">'
-            f"{piece}</span> "
+            f"{html.escape(piece)}</span> "
         )
     return "".join(spans)
