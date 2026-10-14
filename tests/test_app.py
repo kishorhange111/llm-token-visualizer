@@ -1,4 +1,5 @@
 """End-to-end smoke tests of the Streamlit UI, with the tokenizer download mocked out."""
+
 from pathlib import Path
 
 import pytest

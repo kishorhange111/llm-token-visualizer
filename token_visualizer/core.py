@@ -14,6 +14,7 @@ The pipeline used by the app:
          --tokenizer.decode(id) each--> ["piece", "piece", ...]
          --render_tokens_html-->        <span style="color: ...">piece</span> ...
 """
+
 import html
 
 # Display name -> Hugging Face Hub id. Only the tokenizer files are downloaded
@@ -67,7 +68,6 @@ def render_tokens_html(pieces, colors=COLORS):
         if isinstance(piece, tuple):  # accept tokenize() output directly
             piece = piece[1]
         spans.append(
-            f'<span style="color: {colors[idx % len(colors)]}; font-weight: bold;">'
-            f"{html.escape(piece)}</span> "
+            f'<span style="color: {colors[idx % len(colors)]}; font-weight: bold;">{html.escape(piece)}</span> '
         )
     return "".join(spans)

@@ -1,4 +1,5 @@
 """Tokenization and HTML rendering logic."""
+
 import re
 from pathlib import Path
 

@@ -8,6 +8,7 @@ token_visualizer/ package (unit-tested); this file is only the UI.
 
 Run:  streamlit run app.py
 """
+
 import streamlit as st
 from transformers import AutoTokenizer
 

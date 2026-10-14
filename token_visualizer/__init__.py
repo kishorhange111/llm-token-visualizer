@@ -6,6 +6,7 @@ supported tokenizers, how text becomes token pieces, and how those pieces are
 turned into coloured HTML - lives here, so it can be unit-tested with a fake
 tokenizer and without Streamlit or any download.
 """
+
 from .core import COLORS, MODELS, render_tokens_html, tokenize
 
 __all__ = ["COLORS", "MODELS", "render_tokens_html", "tokenize"]

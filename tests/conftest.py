@@ -1,4 +1,5 @@
 """Shared test fixtures: a tiny fake tokenizer, so no test downloads anything."""
+
 from types import SimpleNamespace
 
 import pytest
