@@ -2,3 +2,6 @@ __pycache__/
 *.pyc
 .venv/
 .streamlit/secrets.toml
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
