@@ -4,7 +4,7 @@ split the same text.
 
 Pick a model, type some text, and every token is drawn in its own colour with
 the total token count. The tokenization and rendering logic lives in the
-token_visualizer/ package (unit-tested); this file is only the UI.
+src/token_visualizer/ package (unit-tested); this file is only the UI.
 
 Run:  streamlit run app.py
 """

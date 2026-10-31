@@ -51,20 +51,21 @@ Deploys as-is to **Streamlit Community Cloud** (main file: `app.py`).
 ## Project layout
 ```
 llm-token-visualizer/
-├── app.py                  # Streamlit UI only
-├── token_visualizer/       # tested logic
-│   └── core.py             #   MODELS list, tokenize(), render_tokens_html()
-├── tests/                  # pytest: core logic + Streamlit AppTest smoke tests
-├── pyproject.toml          # metadata, ruff + pytest config
-├── requirements.txt        # streamlit, transformers (pinned)
-├── requirements-dev.txt    # pytest, ruff
-└── Makefile                # make run / lint / test / check
+├── app.py                     # Streamlit UI only (entry point for Streamlit Community Cloud)
+├── src/token_visualizer/      # tested logic (installable package)
+│   └── core.py                #   MODELS list, tokenize(), render_tokens_html()
+├── tests/                     # pytest: core logic + Streamlit AppTest smoke tests
+├── .github/workflows/ci.yml   # lint + tests on every push and pull request
+├── Makefile                   # make install / run / lint / format / test / check
+├── pyproject.toml             # package metadata, ruff + pytest config
+├── requirements.txt           # streamlit, transformers (pinned) + this package
+└── requirements-dev.txt       # pytest, ruff
 ```
 
 ## Testing
 ```bash
 pip install -r requirements.txt -r requirements-dev.txt
-make check                  # = ruff check . && pytest
+make check                  # = ruff check . && ruff format --check . && pytest
 ```
 Unit tests cover tokenization order, special-token counting, colour cycling, HTML escaping of token text, and that every model in the dropdown is documented. Smoke tests drive the real `app.py` with Streamlit's `AppTest` and a fake tokenizer patched in for `AutoTokenizer.from_pretrained`, covering the happy path, a tokenizer that fails to load, and empty input. Nothing is downloaded, so the suite runs offline. CI runs it on every push and pull request.
 
