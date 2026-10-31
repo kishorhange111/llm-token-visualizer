@@ -23,7 +23,7 @@ dev = ["pytest>=8", "ruff>=0.6"]
 Repository = "https://github.com/kishorhange111/llm-token-visualizer"
 
 [tool.setuptools.packages.find]
-include = ["token_visualizer*"]
+where = ["src"]
 
 [tool.ruff]
 line-length = 120
@@ -37,5 +37,5 @@ known-first-party = ["token_visualizer"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-pythonpath = ["."]
+pythonpath = ["src"]
 addopts = "-q"

@@ -1,2 +1,5 @@
+# Runtime dependencies, pinned for reproducible deploys (Streamlit Community Cloud reads this file).
 streamlit==1.45.1
 transformers==4.51.3
+# This repository itself (src/token_visualizer), so `streamlit run app.py` can import it.
+-e .
