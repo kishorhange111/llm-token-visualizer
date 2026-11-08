@@ -1,7 +1,7 @@
 # LLM Token Visualizer
 
 [![CI](https://github.com/kishorhange111/llm-token-visualizer/actions/workflows/ci.yml/badge.svg)](https://github.com/kishorhange111/llm-token-visualizer/actions/workflows/ci.yml)
-![Python](https://img.shields.io/badge/python-3.10%2B-blue)
+![Python](https://img.shields.io/badge/python-3.11%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 **See your text the way an LLM does: a Streamlit app that splits the same text with eight different tokenizers, colours every token, and counts them, so you can compare models side by side.**
