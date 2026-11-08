@@ -8,7 +8,7 @@ version = "1.0.0"
 description = "Streamlit app that shows how different LLM tokenizers split the same text into tokens."
 readme = "README.md"
 license = { file = "LICENSE" }
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 keywords = ["llm", "tokenizer", "bpe", "wordpiece", "sentencepiece", "streamlit", "transformers"]
 classifiers = [
     "Programming Language :: Python :: 3",
